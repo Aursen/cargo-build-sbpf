@@ -28,9 +28,10 @@ pub(crate) const RECOMMENDED_RUSTFLAGS: &[&str] = &[
     "link-arg=--llvm-args=--disable-gotox",
 ];
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+#[derive(Clone, Copy, Debug, Default, PartialEq, Eq)]
 pub(crate) enum SbpfArch {
     V0,
+    #[default]
     V3,
 }
 

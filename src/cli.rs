@@ -65,7 +65,7 @@ pub(crate) fn parse_cli(mut args: Vec<OsString>) -> Result<Option<Cli>> {
     match Args::try_parse_from(std::iter::once(OsString::from("cargo-build-sbpf")).chain(args)) {
         Ok(args) => Ok(Some(Cli {
             diagnosis_config: DiagnosisConfig {
-                arch: args.arch.unwrap_or(SbpfArch::V3),
+                arch: args.arch.unwrap_or_default(),
                 auto_fix: args.auto_fix,
                 skip_builtins_check: args.skip_builtins_check,
             },
